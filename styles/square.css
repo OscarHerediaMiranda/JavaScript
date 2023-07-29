@@ -1,0 +1,33 @@
+.square-section {
+    padding-top: 40px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px; /*separacion de columnas*/
+    justify-content: center;
+    align-items: center;
+}
+
+.square-section__title {
+
+}
+
+.square-section__value {
+    width: 50%;
+    height: 32px;
+}
+
+.square-section__button {
+    width: 50%;
+    padding: 12px;
+    background-color: blue;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+#id {
+    
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="date-content">
+
+    </div>
+    <h1>Cálculo de áreas</h1>
+    <nav class="navigation">
+        <ul class="navigation__list">
+            <li class="navigation__list__item first"><a href="rectangle.html">Área del rectángulo</a></li>
+            <li class="navigation__list__item second"><a href="square.html">Área del cuadrado</a></li>
+            <li class="navigation__list__item third"><a href="circle.html">Área del círculo</a></li>
+        </ul>
+    </nav>
+
+    <div id="location-content"></div>
+
+    <script>
+        var currentDate = new Date();
+        var content = document.getElementById('date-content');
+        content.textContent = currentDate.toString();
+    </script>
+
+    <script src="./scripst.js/index.js">
+        
+    </script>
+</body>
+</html>
