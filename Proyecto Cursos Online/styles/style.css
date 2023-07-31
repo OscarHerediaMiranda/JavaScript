@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    background-color: #080863;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.header__logo a {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.header__logo a, .header__item__link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__navigation {
+    width: 30%;
+}
+
+.header__navigation__items {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
