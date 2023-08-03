@@ -5,12 +5,19 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .header {
     background-color: #080863;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
+    margin-bottom: 40px;
 }
 
 .header__logo a {
@@ -33,3 +40,21 @@
     display: flex;
     justify-content: space-between;
 }
+
+.main {
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+.footer {
+    background-color: black;
+    padding: 3em 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer__paragraph {
+    color: #fff;
+    align-items: center;
+}
+
