@@ -8,7 +8,7 @@ date();
 
 const containerCourses = document.querySelector('.main__courses');
 
-const data = [
+/*const data = [
     {
         title: 'Angular Foundamentals',
         subtitle: 'AGREGADO DE FORMA DINAMICA',
@@ -23,7 +23,17 @@ const data = [
     { title: 'React Native', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 350, tag: 'React', img: 'images/react.png' },
     { title: 'Angular Ionic', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 300, tag: 'Angular', img: 'images/angular.png' },
 
-];
+];*/
+
+const data = []
+
+async function getCourses () {
+    const url = 'http://localhost:3000/courses'
+    const response = await fetch(url)
+    console.log(response)
+}
+
+getCourses()
 
 data.forEach(course => {
     containerCourses.innerHTML += `
