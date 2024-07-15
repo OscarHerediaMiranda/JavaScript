@@ -1,6 +1,19 @@
 const express = require('express')
 const cors = require('cors')
+const MongoClient = require('mongodb').MongoClient
 const app = express()
+let dbobject 
+let connectionString = 'mongodb+srv://oscarherediamiranda:GyHa0NUMNPs9S8vl@cluster0.xapptbz.mongodb.net/dbcourse'
+
+MongoClient.connect(connectionString)
+  .then((db) => {
+    console.log('successfully...',db)
+    dbobject = db
+  })
+  .catch((err) => {
+    console.log('Failed...', err)
+  })
+
 
 app.set('port',3000)
 app.use(cors())
@@ -10,23 +23,9 @@ app.get('/',(request,response) => {
     return response.json({message:'HOLA MUNDO'})
 })
 
-app.get('/courses',(request,response) => {
-    return response.json([
-        {
-            title: 'Angular Foundamentals',
-            subtitle: 'AGREGADO DE FORMA DINAMICA',
-            description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?',
-            price: 150,
-            tag: 'ANGULAR',
-            img: './images/angular.png'
-        },
-        { title: 'Angular Intermedio', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 200, tag: 'Angular', img: 'images/angular.png' },
-        { title: 'React Hooks', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 300, tag: 'React', img: 'images/react.png' },
-        { title: 'Introducción a VueJS', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 250, tag: 'VueJS', img: 'images/vue.png' },
-        { title: 'React Native', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 350, tag: 'React', img: 'images/react.png' },
-        { title: 'Angular Ionic', subtitle: 'AGREGADO DE FORMA DINÁMICA', description: 'sit amet consectetur, adipisicing elit. Maxime consectetur quae at obcaecati cum vel non fuga provident ex ipsam?', price: 300, tag: 'Angular', img: 'images/angular.png' },
-    
-    ])
+app.get('/courses',async (request,response) => {
+    const courses = await dbobject.collection('courses')
+    console.log(courses)
 })
 
 app.listen(app.get('port'),() => {
