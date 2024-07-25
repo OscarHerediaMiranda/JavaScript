@@ -46,6 +46,10 @@ body {
     padding-left: 10%;
 }
 
+.card img {
+    height: 190px;
+}
+
 .footer {
     background-color: black;
     padding: 3em 0;
